@@ -1,2 +1,2 @@
-include ':app'
+include ':mobile-ui', ':remote', ':cache', ':data', ':domain', ':presentation'
 rootProject.name='ErickTijeroRepo'
