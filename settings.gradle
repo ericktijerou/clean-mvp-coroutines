@@ -1,2 +1,1 @@
 include ':mobile-ui', ':remote', ':data', ':domain', ':presentation'
-rootProject.name='ErickTijeroRepo'

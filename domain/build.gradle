@@ -25,9 +25,3 @@ dependencies {
     testImplementation domainTestDependencies.assertj
 
 }
-
-kotlin {
-    experimental {
-        coroutines "enable"
-    }
-}

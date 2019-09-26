@@ -12,8 +12,8 @@ ext {
     androidTargetSdkVersion = 26
     androidCompileSdkVersion = 26
     //Libraries
-    kotlinVersion = '1.3.21'
-    coroutineVersion = '1.1.1'
+    kotlinVersion = '1.3.41'
+    coroutineVersion = '1.3.2'
     retrofitCoroutinesVersion = '1.0.0'
     butterKnifeVersion = '7.0.1'
     recyclerViewVersion = '21.0.3'
@@ -77,7 +77,9 @@ ext {
             androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}",
             retrofit:           "com.squareup.retrofit2:retrofit:${retrofitVersion}",
             retrofitConverter:  "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
-            retrofitAdapter:    "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
+            retrofitAdapter:    "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+            coroutineCore: "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutineVersion}",
+            coroutine: "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}"
     ]
 
     presentationTestDependencies = [
@@ -155,7 +157,7 @@ ext {
             retrofit:           "com.squareup.retrofit2:retrofit:${retrofitVersion}",
             retrofitConverter:  "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
             retrofitAdapter:    "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
-            retrofitAdapterCoroutine: "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:1.0.0",
+            retrofitAdapterCoroutine: "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2",
             coroutineCore: "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutineVersion}",
             coroutine: "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}"
     ]
@@ -187,7 +189,9 @@ ext {
             timber:             "com.jakewharton.timber:timber:${timberVersion}",
             daggerSupport:      "com.google.dagger:dagger-android-support:${daggerVersion}",
             daggerProcessor:    "com.google.dagger:dagger-android-processor:${daggerVersion}",
-            glassfishAnnotation: "org.glassfish:javax.annotation:${glassfishAnnotationVersion}"
+            glassfishAnnotation: "org.glassfish:javax.annotation:${glassfishAnnotationVersion}",
+            coroutineCore: "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutineVersion}",
+            coroutine: "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}"
     ]
 
     mobileUiTestDependencies = [

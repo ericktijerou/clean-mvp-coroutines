@@ -5,7 +5,7 @@ import com.ericktijerou.domain.model.User
 import com.ericktijerou.domain.repository.RandomRepository
 import javax.inject.Inject
 
-class GetUsers @Inject constructor(val randomRepository: RandomRepository):
+open class GetUsers @Inject constructor(val randomRepository: RandomRepository):
         UseCase<List<User>>() {
 
     override suspend fun executeOnBackground(): List<User> {

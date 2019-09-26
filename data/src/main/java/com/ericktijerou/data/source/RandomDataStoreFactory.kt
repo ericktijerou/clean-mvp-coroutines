@@ -1,6 +1,5 @@
 package com.ericktijerou.data.source
 
-import com.ericktijerou.data.repository.RandomCache
 import com.ericktijerou.data.repository.RandomDataStore
 import javax.inject.Inject
 

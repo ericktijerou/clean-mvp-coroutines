@@ -20,7 +20,6 @@ android {
         targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
         versionCode 1
         versionName "1.0"
-        multiDexEnabled = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -76,16 +75,6 @@ android {
     }
 }
 
-kapt {
-    correctErrorTypes = true
-    generateStubs = true
-    gradle.projectsEvaluated {
-        tasks.withType(JavaCompile) {
-            options.compilerArgs << "-Xmaxerrs" << "500"
-        }
-    }
-}
-
 configurations.all {
     resolutionStrategy {
         force "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -96,9 +85,9 @@ dependencies {
     def mobileUiDependencies = rootProject.ext.mobileUiDependencies
     def mobileUiTestDependencies = rootProject.ext.mobileUiTestDependencies
 
-    implementation project(':presentation')
-    implementation project(':data')
-    implementation project(':remote')
+    api project(':presentation')
+    api project(':data')
+    api project(':remote')
 
     implementation mobileUiDependencies.javaxAnnotation
 
@@ -116,6 +105,9 @@ dependencies {
     implementation mobileUiDependencies.glide
     implementation mobileUiDependencies.dagger
     implementation mobileUiDependencies.daggerSupport
+
+    implementation mobileUiDependencies.coroutineCore
+    implementation mobileUiDependencies.coroutine
 
     testImplementation mobileUiTestDependencies.kotlinJUnit
 
@@ -151,12 +143,6 @@ dependencies {
 
     kaptTest mobileUiDependencies.daggerCompiler
     kaptAndroidTest mobileUiDependencies.daggerCompiler
-}
-
-kotlin {
-    experimental {
-        coroutines "enable"
-    }
 }
 
 android {
