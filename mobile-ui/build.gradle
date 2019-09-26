@@ -79,7 +79,11 @@ android {
 kapt {
     correctErrorTypes = true
     generateStubs = true
-
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xmaxerrs" << "500"
+        }
+    }
 }
 
 configurations.all {
@@ -94,7 +98,6 @@ dependencies {
 
     implementation project(':presentation')
     implementation project(':data')
-    implementation project(':cache')
     implementation project(':remote')
 
     implementation mobileUiDependencies.javaxAnnotation
@@ -150,6 +153,15 @@ dependencies {
     kaptAndroidTest mobileUiDependencies.daggerCompiler
 }
 
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+
+android {
+    compileOptions.incremental = false
+}
 
 /** ../gradlew clean assembleRelease crashlyticsUploadDistributionRelease
  * */
