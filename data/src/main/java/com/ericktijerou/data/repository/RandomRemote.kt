@@ -4,7 +4,5 @@ import com.ericktijerou.data.model.UserEntity
 import io.reactivex.Single
 
 interface RandomRemote {
-
-    fun getUsers(): Single<List<UserEntity>>
-
+    suspend fun getUsers(): List<UserEntity>
 }

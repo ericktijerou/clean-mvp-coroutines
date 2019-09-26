@@ -6,10 +6,6 @@ import io.reactivex.Single
 
 interface RandomRepository {
 
-    fun clearUsers(): Completable
-
-    fun saveUsers(users: List<User>): Completable
-
-    fun getUsers(): Single<List<User>>
+    suspend fun getUsers(): List<User>
 
 }

@@ -10,15 +10,7 @@ import javax.inject.Inject
 open class RandomRemoteDataStore @Inject constructor(private val randomRemote: RandomRemote) :
     RandomDataStore {
 
-    override fun clearUsers(): Completable {
-        throw UnsupportedOperationException()
-    }
-
-    override fun saveUsers(users: List<UserEntity>): Completable {
-        throw UnsupportedOperationException()
-    }
-
-    override fun getUsers(): Single<List<UserEntity>> {
+    override suspend fun getUsers(): List<UserEntity> {
         return randomRemote.getUsers()
     }
 

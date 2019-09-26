@@ -6,10 +6,6 @@ import io.reactivex.Single
 
 interface RandomDataStore {
 
-    fun clearUsers(): Completable
-
-    fun saveUsers(users: List<UserEntity>): Completable
-
-    fun getUsers(): Single<List<UserEntity>>
+    suspend fun getUsers(): List<UserEntity>
 
 }

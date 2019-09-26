@@ -18,6 +18,9 @@ dependencies {
     implementation remoteDependencies.retrofit
     implementation remoteDependencies.retrofitConverter
     implementation remoteDependencies.retrofitAdapter
+    implementation remoteDependencies.retrofitAdapterCoroutine
+    implementation remoteDependencies.coroutineCore
+    implementation remoteDependencies.coroutine
 
     testImplementation remoteTestDependencies.junit
     testImplementation remoteTestDependencies.kotlinJUnit
@@ -25,4 +28,10 @@ dependencies {
     testImplementation remoteTestDependencies.assertj
 
     compile project(':data')
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
 }

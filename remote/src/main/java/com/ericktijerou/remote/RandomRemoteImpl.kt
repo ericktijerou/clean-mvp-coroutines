@@ -12,12 +12,11 @@ class RandomRemoteImpl @Inject constructor(private val randomService: RandomServ
 
     RandomRemote {
 
-    override fun getUsers(): Single<List<UserEntity>> {
-        return randomService.getUsers()
-            .map {
-                it.results!!.map { listItem ->
-                    userEntityMapper.mapFromRemote(listItem)
-                }
-            }
+    override suspend fun getUsers(): List<UserEntity> {
+        val results = randomService.getUsers().await().results
+        return results!!.map {
+            userEntityMapper.mapFromRemote(it)
+        }
     }
+
 }
